@@ -44,7 +44,7 @@ class Generator
             }
         }
         //individual generator boosts and multi boost
-        let f = new Decimal(2);
+        let f = new Decimal(1);
         for(let l of game.layers)
         {
             for(let upg of l.getAllUpgrades().filter(upg => (upg.type === UPGRADE_GENERATOR && upg.cfg.generators.includes(this.id)) || upg.type === UPGRADE_GENERATOR_TIMELAYER))
@@ -83,8 +83,8 @@ class Generator
     getPrice(bought)
     {
         let power = game.currentChallenge && game.currentChallenge.effectType === CHALLENGE_EFFECT_PRICES_POWER ? game.currentChallenge.applyEffect() : new Decimal(1);
-        let base = new Decimal(this.initPrice).mul(Decimal.pow(this.priceIncrease, Decimal.floor(bought.div(10))));
-        return Utils.createValueDilation(base, 0.0075).pow(power);
+        let base = new Decimal(this.initPrice).mul(Decimal.pow(this.priceIncrease, Decimal.floor(bought.div(3))));
+        return Utils.createValueDilation(base, 0.00075).pow(power);
     }
 
     currentPrice()
@@ -102,8 +102,8 @@ class Generator
         if(this.layer.resource.gte(this.currentPrice()))
         {
             this.layer.resource = this.layer.resource.sub(this.currentPrice());
-            this.bought = this.bought.add(1);
-            this.amount = this.amount.add(1);
+            this.bought = this.bought.add(10);
+            this.amount = this.amount.add(10);
         }
     }
 
