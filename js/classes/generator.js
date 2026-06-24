@@ -5,7 +5,7 @@ class Generator
         this.layer = layer;
         this.id = id; //nth generator, needed for upgrades
         this.generates = generates;
-        this.amount = new Decimal(17942378921);
+        this.amount = new Decimal(3e763476234786826437672354768345786);
         this.bought = new Decimal(0);
         this.name = name;
         this.initPrice = initPrice;
