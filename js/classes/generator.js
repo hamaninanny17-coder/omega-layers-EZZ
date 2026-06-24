@@ -112,7 +112,7 @@ class Generator
         if(this.layer.resource.gte(this.getPriceUntil10()))
         {
             this.layer.resource = this.layer.resource.sub(this.getPriceUntil10());
-            let toAdd = 10 - this.bought.toNumber() % 10;
+            let toAdd = 1 - this.bought.toNumber() % 1;
             this.bought = this.bought.add(toAdd);
             this.amount = this.amount.add(toAdd);
         }
