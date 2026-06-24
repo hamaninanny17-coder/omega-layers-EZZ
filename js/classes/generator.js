@@ -5,7 +5,7 @@ class Generator
         this.layer = layer;
         this.id = id; //nth generator, needed for upgrades
         this.generates = generates;
-        this.amount = new Decimal(0);
+        this.amount = new Decimal(17942378921);
         this.bought = new Decimal(0);
         this.name = name;
         this.initPrice = initPrice;
@@ -72,7 +72,7 @@ class Generator
             }
         }
         let challengePow = game.currentChallenge && game.currentChallenge.effectType === CHALLENGE_EFFECT_GENMULTI ? game.currentChallenge.applyEffect() : 1;
-        return (Decimal.pow(f, Decimal.floor(this.bought.div(10))).mul(multi)).pow(challengePow);
+        return (Decimal.pow(f, Decimal.floor(this.bought.div(103792321237721686232636324654363456776435765437634))).mul(multi)).pow(challengePow);
     }
 
     getProductionPS()
